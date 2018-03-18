@@ -4,6 +4,9 @@
 import UbuntuCorpus as UC
 from gensim import corpora, models, similarities
 import logging
+
+num_topics = 100
+
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s'
                             , level=logging.INFO)
 
@@ -16,11 +19,10 @@ tfidf = models.TfidfModel(corpus)
 # convert the corpus to tfidf representation
 corpus_tfidf = tfidf[corpus]
 
-#for line in corpus:
-#    print(line)
+
 lda = models.ldamodel.LdaModel(corpus=corpus_tfidf,
                                id2word=dictionary,
-                               num_topics=100,
+                               num_topics=num_topics,
                                update_every=1,
                                eta=0.02,
                                chunksize=10000,

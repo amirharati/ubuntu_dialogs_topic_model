@@ -13,8 +13,6 @@ if __name__ == "__main__":
 
     dictionary = corpora.Dictionary.load_from_text('tmp/dialogs4.dict')
     corpus = corpora.MmCorpus('tmp/dialogs4-corpus.mm')
-
-    # tfidf = models.TfidfModel.load("tmp/tfidf.model")
     lda = models.ldamodel.LdaModel.load("tmp/lda_topics.model")
 
     top_topics = lda.print_topics(10, 4)

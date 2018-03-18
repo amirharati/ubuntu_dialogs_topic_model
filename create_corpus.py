@@ -1,5 +1,5 @@
 """
-   Create corpus for further use.
+   Create baseline corpus for further use.
 """
 import UbuntuCorpus as UC
 from gensim import corpora, models, similarities

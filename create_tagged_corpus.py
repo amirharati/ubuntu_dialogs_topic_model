@@ -2,7 +2,6 @@
    Create corpus for further use.
 """
 import UbuntuCorpus as UC
-from gensim import corpora, models, similarities
 import logging
 import pathlib
 import pickle
@@ -16,6 +15,4 @@ corpus = list(UC.UbuntuCorpus("data/dialogs_4.txt", "tmp/dialogs4.dict", tagged_
 fo = open("tmp/dialogs4-tagged-corpus.pickle", 'wb')
 pickle.dump(corpus, fo)
 fo.close()
-#for c in corpus:
-#    print(c)
-#corpora.MmCorpus.serialize('tmp/dialogs4-tagged-corpus.mm', corpus)
+

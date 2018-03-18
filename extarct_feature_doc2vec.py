@@ -2,22 +2,14 @@
     pass the raw data through doc2vec model to obtain vec presentation.
     all create id2doc table.
 """
-from gensim import corpora, models, similarities
+from gensim import corpora, models
 import logging
 import re
 import data_prep as dp
 import sys
-import multiprocessing
-import numpy as np
-import UbuntuCorpus as UC
-import pickle
-
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s'
                             , level=logging.INFO)
-#fo = open("tmp/dialogs4-tagged-corpus.pickle", 'rb')
-#tagged_docs = pickle.load(fo)
-#fo.close()
 
 model = models.doc2vec.Doc2Vec.load("tmp/doc2vec.model")
 
