@@ -10,6 +10,9 @@ from nltk.cluster import euclidean_distance, cosine_distance
 
 class VecCluster:
     def __init__(self, n_clusters, dict_file):
+        """
+           This is a wrapper class around k-mean clustering with cosine dist.
+        """
         # thershold for predictions
         self.T = 5
         self.n_clusters = n_clusters
@@ -96,16 +99,15 @@ class VecCluster:
             cluster2word[cn] = sorted_words
 
         self.main_topics_id = []
-        for i in sorted(cluster_counter, key=cluster_counter.get, reverse=True):
+        for i in sorted(cluster_counter, key=cluster_counter.get,
+                        reverse=True):
             self.main_topics_id.append(i)
 
-        #print(main_topics_id)
         self.cluster_names = {}
         for ci in cluster2word:
             v = cluster2word[ci][:4]
             #print(ci, " --- ", v)
             self.cluster_names[ci] = "-".join(v)
-        #print(cluster2word)
 
         print("TOP TOPICS")
         for i in range(10):
