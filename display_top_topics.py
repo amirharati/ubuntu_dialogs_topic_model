@@ -6,7 +6,6 @@ from gensim import corpora, models, similarities
 import logging
 import re
 import data_prep as dp
-import pyLDAvis.gensim
 
 if __name__ == "__main__":
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s'
@@ -27,6 +26,3 @@ if __name__ == "__main__":
         words = [dictionary[x] for x in unpack]
         s = "-".join(words)
         print("topic ", t[0], " ", s,)
-
-    vis = pyLDAvis.gensim.prepare(lda, corpus, dictionary)
-    pyLDAvis.display(vis)
