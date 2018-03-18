@@ -10,13 +10,25 @@ from nltk.cluster import euclidean_distance, cosine_distance
 
 class VecCluster:
     def __init__(self, n_clusters, dict_file):
+        # thershold for predictions
+        self.T = 5
         self.n_clusters = n_clusters
         self.pattern = re.compile('[&!"#%\'()*+,-./:;<=>?@\[\]^_`{|}~1234567890’”“′‘\\\]')
         self.dictionary = corpora.Dictionary.load_from_text(dict_file)
 
     def predict(self, feat):
-        p = self.clusterer.classify(feat)
-        return p, self.cluster_names[p]
+        p = self.clusterer.classification_probdist(feat)
+        probs = []
+        for sample in p.samples():
+            t = p.prob(sample) * 100
+            if t > self.T:
+                probs.append((sample, t))
+        probs = sorted(probs, key=lambda x: x[1], reverse=True)
+        topics = []
+        for p in probs:
+            n = self.cluster_names[p[0]]
+            topics.append((p[0], n, p[1]))
+        return topics
 
     def cluster(self, feats_file, num_training, docs_file):
         """ feats_file: file contains features

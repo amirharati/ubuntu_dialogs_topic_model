@@ -34,15 +34,8 @@ if __name__ == "__main__":
             v.append(word)
     inferred_docvec = model.infer_vector(v)
     topics = VC.predict(inferred_docvec)
-    print(topics)
-"""
-    topics = lda.get_document_topics(new_vec)
-    topics = reversed(sorted(topics, key=lambda x: x[1]))
+
     print("TOPICS:")
     for t in topics:
-        terms = lda.get_topic_terms(t[0], 4)
-        unpack, _ = zip(*terms)
-        words = [dictionary[x] for x in unpack]
-        s = "-".join(words)
-        print("topic ", t[0], " ", s, " probablity:", t[1])
-"""
+        print("topic ", t[0], " ", t[1], " probablity:", t[2])
+
