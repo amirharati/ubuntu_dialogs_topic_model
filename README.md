@@ -22,8 +22,6 @@ python  display_top_topics_baseline.py
 python data_prep.py
 This will create a file name data/dialogs_4.txt that contains all dialogs for section 4 and used in the next steps.
 
-Notice: I uploaded tmp.zip that contains all the models trained in following section. You can simply unzip it and test the models without training.
-
 # Baseline Model
 Baseline model is a LDA with a simple NLP pipeline (e.g. remving stopwords, tfidf etc). To train the model:
 
