@@ -14,39 +14,59 @@ There are few files that are used to train and test LDA and doc2vec models.
 After training (see below), use display_top_topics_baseline.py to see the top topics for LDA and display_top_topics_doc2vec.py to see top topics for doc2vec model. Use topic_detector_lda_baseline.py and topic_detector_doc2vec.py to see the topic detected for a new tsv file.
 
 *Example:*
+
 python  topic_detector_lda_baseline.py data/dialogs/4/1.tsv
+
 python  topic_detector_doc2vec.py data/dialogs/4/1.tsv
+
 python  display_top_topics_baseline.py
 
+
 *before training run:*
+
 python data_prep.py
+
 This will create a file name data/dialogs_4.txt that contains all dialogs for section 4 and used in the next steps.
 
 # Baseline Model
 Baseline model is a LDA with a simple NLP pipeline (e.g. remving stopwords, tfidf etc). To train the model:
 
 *First create an iterable corpus object and store it:*
+
 python create_corpus.py
+
 This will save the corpus  in tmp directory.
 
+
 *Train:*
+
 python train_topic_model_lda_baseline.py
+
 
 # Doc2Vec Model
 For doc2vec model we first train the doc2vec model to convert docs into dense vectors. For this project, I choose a small dimension of 10. Then we convert the data into vectors and finally we use a clustering algorithm to find the clusters/topics.
 
 *First create the corpus:*
+
 python create_tagged_corpus.py
+
 This save the corpus in tmp directory.
 
+
 *Second extract features:*
+
 python extract_feature_doc2vec.py
+
 This will save the features in tmp directory.
 
+
 *Third cluster:*
+
 python cluster_doc2vec_features.py
 
+
 Now you should have the trianed models in tmp directory.
+
 
 # Samples outputs
 
