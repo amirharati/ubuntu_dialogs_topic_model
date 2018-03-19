@@ -325,8 +325,8 @@ topic  6   server-ssh-desktop-x  probablity: 100.0
 
 # TODO
 * Develope metric and tools to directly compare the performance: By inspection, we can see doc2vec produce relatively interesting results but I have not conducted any scientific comparsion between two models.
-* Doc2Vec model is very sensetive to some of its hyper-params. I find out we I train it for more passes the over results degrades. I think the model overfit due to small dataset. However, this needs more investigations.
+* Doc2Vec model is very sensetive to some of its hyper-params. I find out when I train it for more passes the overall results degrades. I think the model overfit due to small dataset. However, this needs more investigations.
 * Tune the algorithms: I have not spend a lot of time to tune these algorithms. There are a lot of directions (e.g. hyper-params, NLP pipeline etc) to tune the performnace.
 * Use sequential models: Both models are using bag of words. Using sequential models like LSTM (for classification) might be helpful.
 * Train on large dataset: This subset of ubuntu dialog is relatively small and not very good for word2vec and doc2vec models.
-* Use  averge word2vec model on pretrained Google News corpus: This might actually help sinc we will have good word2vec models.
+* Use  average word2vec model on pretrained Google News corpus: This might actually help since we will have good word2vec models.
