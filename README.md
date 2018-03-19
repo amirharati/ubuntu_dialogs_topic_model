@@ -160,24 +160,43 @@ topic  28   upgrade-version-release-install  probablity: 100.0
 
 ### LDA model
 (py36) [bash]:python topic_detector_lda_baseline.py  data/dialogs/4/100000.tsv\s\s
-2018-03-18 17:55:19,132 : INFO : loaded corpus index from tmp/dialogs4-corpus.mm.index\s\s
+
+2018-03-18 17:55:19,132 : INFO : loaded corpus index from tmp/dialogs4-corpus.mm.index
+
 2018-03-18 17:55:19,132 : INFO : initializing cython corpus reader from tmp/dialogs4-corpus.mm
+
 2018-03-18 17:55:19,132 : INFO : accepted corpus with 268895 documents, 51147 features, 4530364 non-zero entries
+
 2018-03-18 17:55:19,132 : INFO : loading TfidfModel object from tmp/tfidf.model
+
 2018-03-18 17:55:19,183 : INFO : loaded tmp/tfidf.model
+
 2018-03-18 17:55:19,183 : INFO : loading LdaModel object from tmp/lda_topics.model
+
 2018-03-18 17:55:19,184 : INFO : loading expElogbeta from tmp/lda_topics.model.expElogbeta.npy with mmap=None
+
 2018-03-18 17:55:19,203 : INFO : setting ignored attribute state to None
+
 2018-03-18 17:55:19,203 : INFO : setting ignored attribute dispatcher to None
+
 2018-03-18 17:55:19,203 : INFO : setting ignored attribute id2word to None
+
 2018-03-18 17:55:19,203 : INFO : loaded tmp/lda_topics.model
+
 2018-03-18 17:55:19,203 : INFO : loading LdaState object from tmp/lda_topics.model.state
+
 2018-03-18 17:55:19,300 : INFO : loaded tmp/lda_topics.model.state
+
 *TOPICS:*
+
 topic  48   ssh-server-remote-secure  probablity: 0.39898354
+
 topic  66   fonts-unity-es-font  probablity: 0.160864
+
 topic  39   compiz-beryl-effects-fusion  probablity: 0.12017661
+
 topic  13   ftp-nick-rpm-alien  probablity: 0.051770627
+
 topic  72   xorg-conf-x-resolution  probablity: 0.051737484
 
 ### doc2vec
