@@ -159,8 +159,8 @@ topic  28   upgrade-version-release-install  probablity: 100.0
 2008-11-26T06:54:00.000Z        n8tuser |MUSE|  -> provide a better information
 
 ### LDA model
-(py36) [bash]:python topic_detector_lda_baseline.py  data/dialogs/4/100000.tsv
-2018-03-18 17:55:19,132 : INFO : loaded corpus index from tmp/dialogs4-corpus.mm.index
+(py36) [bash]:python topic_detector_lda_baseline.py  data/dialogs/4/100000.tsv\s\s
+2018-03-18 17:55:19,132 : INFO : loaded corpus index from tmp/dialogs4-corpus.mm.index\s\s
 2018-03-18 17:55:19,132 : INFO : initializing cython corpus reader from tmp/dialogs4-corpus.mm
 2018-03-18 17:55:19,132 : INFO : accepted corpus with 268895 documents, 51147 features, 4530364 non-zero entries
 2018-03-18 17:55:19,132 : INFO : loading TfidfModel object from tmp/tfidf.model
