@@ -11,7 +11,7 @@ import VecCluster as vc
 n_clusters = 100
 # number of data point selected randomly for clustering
 # we cant train on whole dataset due to limittd compute power.
-n_random_data = 20000
+n_random_data = 10000
 # Display progress logs on stdout
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(message)s')
